@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Intelligent Healthcare Repository</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Fraunces:wght@600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>Intelligent Healthcare Repository</h1>
+  <input id="search" type="search" placeholder="Search patients, conditions, notes" aria-label="Search">
+  <button id="addBtn" class="primary">Add patient</button>
+  <button id="exportBtn">Export JSON</button>
+</header>
+<main>
+  <aside class="panel" aria-label="Patients"><div id="list"></div></aside>
+  <section id="detail" class="stack" aria-live="polite"></section>
+</main>
+
+<dialog id="dlg">
+  <form id="ptForm" class="stack">
+    <h2>New patient</h2>
+    <label>Full name<input name="name" required></label>
+    <div class="row">
+      <label>Age<input name="age" type="number" min="0" max="120" required></label>
+      <label>Sex<select name="sex"><option>Female</option><option>Male</option><option>Other</option></select></label>
+      <label>Blood group<select name="blood"><option>A+</option><option>A-</option><option>B+</option><option>B-</option><option>AB+</option><option>AB-</option><option>O+</option><option>O-</option></select></label>
+    </div>
+    <label>Known conditions (comma separated)<input name="conditions"></label>
+    <label>Allergies (comma separated)<input name="allergies"></label>
+    <div class="row"><button type="button" id="cancel">Cancel</button><button class="primary">Save patient</button></div>
+  </form>
+</dialog>
+
+<script src="script.js"></script>
+</body>
+</html>
